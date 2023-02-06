@@ -50,7 +50,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/bakery_logo2-removebg-preview.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/bakery_logo2-removebg-preview.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(166, 82, 43));

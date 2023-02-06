@@ -168,7 +168,7 @@ public class customer extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/bakery-shop.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/bakery-shop.png")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(166, 82, 43));

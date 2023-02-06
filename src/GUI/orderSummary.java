@@ -60,7 +60,7 @@ public class orderSummary extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/application.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/application.png")); // NOI18N
         jLabel1.setToolTipText("");
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N

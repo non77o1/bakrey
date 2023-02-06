@@ -71,7 +71,7 @@ public class UpdateStock extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/roller.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/roller.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel2.setText("Stock Update");
@@ -215,24 +215,28 @@ public class UpdateStock extends javax.swing.JFrame {
             name.trim();
             if (price.matches("[0.0-9.0]+")) {
                 if (name.matches("[a-zA-Z_]+")) {
-                    Add_Snack(name, price);
-                    int i=0;
-                    if (getAllItems()!=null){
-                        listStock =new String[50];
-                        for (Items b: getAllItems()){
-                            if (i!=50){
-                                listStock[i]=b.toString();
-                                i++;
+                    double price1 =Double.parseDouble(price);
+                    if (price1 > 0) {
+                        Add_Snack(name, price1);
+                        int i=0;
+                        if (getAllItems()!=null){
+                            listStock =new String[50];
+                            for (Items b: getAllItems()){
+                                if (i!=50){
+                                    listStock[i]=b.toString();
+                                    i++;
+                                }
                             }
+                            Item_jList1.setModel(new DefaultComboBoxModel<>(listStock));
                         }
-                        Item_jList1.setModel(new DefaultComboBoxModel<>(listStock));
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Pleas Enter valid number at price filed", "Error", JOptionPane.ERROR_MESSAGE);
                     }
-
                 } else {
                     JOptionPane.showMessageDialog(this, "Pleas Enter letters Only", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Pleas Enter number at price filed", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Pleas Enter valid number at price filed", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }    }
 
@@ -380,8 +384,8 @@ public class UpdateStock extends javax.swing.JFrame {
         }
     }
 
-    private void Add_Snack(String name, String price) {
-        double price1 =Double.parseDouble(price);
+    private void Add_Snack(String name, double price) {
+
         DB n= new DB();
         Connection dbconn =n.connectDB();
         int last_id=0;
@@ -400,7 +404,7 @@ public class UpdateStock extends javax.swing.JFrame {
                 PreparedStatement st = (PreparedStatement) dbconn.prepareStatement("insert into stock(stock_id,stock_name,stock_price) values (?,?,?)  ");
                 st.setInt(1, s);
                 st.setString(2, name);
-                st.setDouble(3,price1);
+                st.setDouble(3,price);
                 int res2 = st.executeUpdate();
                 if (res2==1){
                     getAllItems();

@@ -48,7 +48,7 @@ public class manger extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/bakery.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/bakery.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 51, 0));

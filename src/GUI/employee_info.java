@@ -75,7 +75,7 @@ public class employee_info extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(239, 211, 191));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("/Users/hneen./IdeaProjects/caffe/icons/img.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("icons/img.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel2.setText("Employees Information");
@@ -281,12 +281,12 @@ public class employee_info extends javax.swing.JFrame {
             if (!salary.equals("")){
                 if (salary.matches("[0.0-9.0]+")) {
                     double salary1=Double.parseDouble(salary);
-                    if (salary1<=10000){
+                    if (salary1<=10000 && salary1>0){
                         if (getIdE != -1) {
                             setSalary(getIdE, salary1);
                         }
                     }else {
-                        JOptionPane.showMessageDialog(this, "Salary shouldn't be greater than 10K! ", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(this, "Salary shouldn't be greater than 10K! or less than zero", "Error", JOptionPane.ERROR_MESSAGE);
 
                     }
                 }else {

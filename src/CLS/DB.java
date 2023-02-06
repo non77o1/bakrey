@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DB {
     static String URL="jdbc:mysql://localhost:3306/Bakery";
-
+//set pass to your mysql password to run
     static String pass="Hn770911";
     static String user="root";
     public static Connection connectDB(){
